@@ -1,0 +1,12 @@
+#include <iostream>
+
+int main()
+{
+    std::cout<<"Hello, my name is PaneraCDN and I'll be naming 3 of my favourite snacks!\n";
+    std::cout<<"The first snacks are Cookies.\n";
+    std::cout<<"The next snacks are named Chips.\n";
+    std::cout<<"The last snacks are literally any type of Candy.\n";
+    std::cout<<"These are 3 of my favourite snacks!\n";
+
+    return 0;
+}
