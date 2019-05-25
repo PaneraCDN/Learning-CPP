@@ -1,0 +1,19 @@
+#include <iostream>
+
+int main(){
+    double number1, number2;
+
+    std::cout << " Enter the first number!\n";
+    std::cin >> number1;
+    
+    std::cout << std::endl;
+
+    std::cout << "Nice, now enter the second number!\n";
+    std::cin >> number2;
+
+    std::cout << std::endl;    
+
+    std::cout << "The total of those two numbers is " << number1+number2 << "!\n";
+
+return 0;
+}
