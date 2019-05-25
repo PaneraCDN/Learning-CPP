@@ -1,0 +1,28 @@
+#include <iostream>
+
+int main(){
+    int first_age, second_age;
+
+    std::cout << "What's the first age?\n";
+    std::cin >> first_age;
+
+    std::cout << std::endl;
+
+    std::cout << "Okay, now what's the second age?\n";
+    std::cin >> second_age;
+
+    std::cout << std::endl;
+
+    if (first_age > second_age){
+        std::cout << "The person who is " << first_age << " is the oldest!\n";
+    }
+    else if (first_age < second_age){
+        std::cout << "The person who is " << second_age << " is the oldest!\n";
+    }
+    else if (first_age == second_age && first_age < 100 && second_age < 100){
+        std::cout << "You both are the same age!\n";
+    }
+    else if (first_age > 100 && second_age > 100){
+        std::cout << "Wow, you both are over 100. Don't die lol.\n";
+    }
+}
