@@ -1,0 +1,33 @@
+/*Implement a simple "password" system that takes a password in the form of a number. 
+Make it so that either of two numbers is valid, but use only one if statement to do the check.*/
+
+// Passwords will be 7 and 25. 
+
+#include <iostream>
+
+int check_password(int password){
+  
+  if (password != 7 && password != 25){
+    std::cout << "Sorry! That's not the right password!\n";
+  }
+  else{
+    std::cout << "Correct password! You're in!\n";
+  }
+
+  return 0;
+}
+
+
+int main(){
+
+  int password;
+
+  std::cout << "Enter your password! \n";
+  std::cin >> password;
+
+  std::cout << std::endl;
+
+  check_password(password);
+
+  return 0;
+}
