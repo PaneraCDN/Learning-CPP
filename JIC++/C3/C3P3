@@ -1,0 +1,20 @@
+#include <iostream>
+
+int main(){
+
+    double first_number, second_number;
+    
+    std::cout << "What's the first number?\n";
+    std::cin >> first_number;
+
+    std::cout << std::endl;
+
+    std::cout << "Okay, now what's the second number?\n";
+    std::cin >> second_number;
+
+    std::cout << std::endl;
+
+    std::cout << "Alright, when you divide those two numbers, you get " << (first_number / second_number) << "!\n";
+
+return 0;
+}
