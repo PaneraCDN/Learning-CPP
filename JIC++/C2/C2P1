@@ -1,8 +1,8 @@
 #include <iostream>
 
-int main()
-{
-    std::cout<<"Hello! My name is PaneraCDN!\n";
+int main(){
+    
+    std::cout<<"Hello! I'm PaneraCDN!\n";
 
     return 0;
 }
