@@ -1,0 +1,46 @@
+/* Write a small calculator that takes as input one of the four arithmetic operations, the two arguments to those operations, and then prints out the result. */
+
+#include <iostream>
+
+int main(){
+
+  /* The follwing lines are for creating and initializing variables */
+  int operation_choice;
+  double first_number, second_number;
+
+  /* The following lines are for presenting the user with 4 input options and storing the selection into a variable. */
+  std::cout << "What arithmetic operation would you like to conduct?\n";
+  std::cout << std::endl; // This is used for creating space between input options (making it look nicer)
+  std::cout << "1) Addition\n";
+  std::cout << "2) Subtraction\n";
+  std::cout << "3) Multiplication\n";
+  std::cout << "4) Division\n" << std::endl;
+  std::cin >> operation_choice;
+  std::cout << std::endl;
+
+  /* The following lines are for gaining the two numbers the user wants to use and storing them into variables */
+  std::cout << "Alright! What's the first number you would like to use?\n";
+  std::cin >> first_number;
+  std::cout << std::endl;
+  std::cout << "Got it! Now, what's the second number you would like to use?\n";
+  std::cin >> second_number;
+  std::cout << std::endl;
+
+  if (operation_choice == 1){
+    std::cout << "The answer is " << first_number + second_number;
+  }
+  else if (operation_choice == 2){
+    std::cout << "The answer is " << first_number - second_number;
+  }
+  else if (operation_choice == 3){
+    std::cout << "The answer is " << first_number * second_number;
+  }
+  else if (operation_choice == 4){
+    std::cout << "The answer is " << first_number / second_number;
+  }
+else{
+  std::cout << "Sorry, the number you have entered is not a valid option!\n";
+}
+
+return 0;
+}
