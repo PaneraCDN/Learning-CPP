@@ -1,5 +1,11 @@
 #include <iostream>
 
+
+
+/* Ask the user for two users' ages, and indicate who is older; behave differently if both are over 100. */
+
+
+
 int main(){
     int first_age, second_age;
 
