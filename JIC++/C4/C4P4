@@ -1,0 +1,36 @@
+/* Expand the password checking program from earlier in this chapter and make it take multiple usernames, each with their own password, and ensure that the right username is used for the right password. Provide the ability to prompt users again if the first login attempt failed. */
+
+/* Logins: Apple;Pie / Cheese;Pizza / Chocolate;Muffin */
+
+#include <iostream>
+#include <string>
+
+int main(){
+
+  /* The following lines are for creating and initializing variables */
+  std::string username, password;
+
+  /* The following lines are for gaining user input and storing them into variables */
+
+  std::cout << "What is your username?\n";
+  getline (std::cin, username);
+  std::cout << std::endl;
+  std::cout << "Okay, now what is your password?\n";
+  getline (std::cin, password);
+  std::cout << std::endl;
+
+  if (username == "Apple" && password == "Pie"){
+    std::cout << "You have gained access!\n";
+  }
+  else if (username == "Cheese" && password == "Pizza"){
+    std::cout << "You have gained access!\n";
+  }
+  else if (username == "Chocolate" && password == "Muffin"){
+    std::cout << "You have gained access!\n";
+  }
+  else{
+    std::cout << "Access Denied!\n";
+  } 
+  
+  return 0;
+}
