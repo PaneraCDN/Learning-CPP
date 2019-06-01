@@ -1,25 +1,35 @@
-/* Write a menu program that lets the user select from a list of options, and if the input is not one of the options, reprint the list */
+/* - Write a menu program that lets the user select from a list of options.
+- If the input is not one of the options, reprint the list */
 
 #include <iostream>
 
-int main(){
+int main() {
 
-  /* The following lines are for creating and initializing variables */
+	/* - The following lines are for creating and initializing variables */
 
-  int user_input;
+	int user_input;
 
-  /* The following lines are for presenting the user with output and gaining input and storing them into a variable */
+	/* - The following lines are for presenting the user with output and gaining input and storing them into a variable */
 
-  /* This will be placed into a do while loop so just the user can have at least 1 attempt to answer the output generated. */
-  
-  do while {
-  std::cout << "What would you like to have for lunch?\n";
-  std::cout << "1) Burgers\n";
-  std::cout << "2) French Fries\n";
-  std::cout << "3) Rice\n";
-  std::cout << "4) Pizza\n";
-  std::cout << "5) Sandwich\n" << std::endl;
-  std::cin >> user_input;
+	/* - This will be placed into a do while loop so just the user can have at least 1 attempt to answer the output generated.
+	- There will be an exception, just in case the user doesn't want to choose a menu item. */
 
-  return 0;
+	do {
+		std::cout << "What would you like to have for lunch?\n";
+		std::cout << "1) Burgers\n";
+		std::cout << "2) French Fries\n";
+		std::cout << "3) Rice\n";
+		std::cout << "4) Pizza\n";
+		std::cout << "5) Sandwich\n";
+		std::cout << "0) No Thanks, I'm Not Hungry!\n" << std::endl;
+		std::cin >> user_input;
+
+		if (user_input == 0) {
+			std::cout << "Alright, have a nice day!";
+			break;
+		}
+
+	} while (user_input > 5 || user_input < 1);
+
+return 0;
 }
