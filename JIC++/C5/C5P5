@@ -1,0 +1,13 @@
+/* Write a program that displays the first 20 square numbers */
+
+#include <iostream>
+
+int main() {
+
+	/* The following line(s) for creating a for loop that iterates from 1 - 20. It will multiply the current iteration by itself and print that number along with the original number. */
+	for (int i = 1; i <= 20; i++) {
+		std::cout << "The square root of " << i << " is " << i * i << "!\n" << std::endl;
+	}
+
+	return 0;
+}
