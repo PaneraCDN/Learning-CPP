@@ -1,0 +1,36 @@
+/* Write a password prompt that gives a user only a certain number of password entry attempts...so that the user cannot easily write a password cracker. */
+
+#include <iostream>
+#include <string>
+
+int main() {
+
+	/* The following lines are creating and initalizing variables. */
+	std::string correct_password = "Programming";
+	std::string user_input;
+	int guesses = 0;
+
+	/* This is a for loop that will give the user 3 chances to type the correct password. If they guess wrong, they lose a chance and can retry, if they get it right within the limit, the loop will exit out. 
+	If they use up all of their chances, the loop will exit out and they lose the chance to enter in another password.*/
+	for (guesses = 3; guesses > 0; guesses--) {
+		std::cout << "Please Enter Your Password!\n" << std::endl;
+		std::cin >> user_input;
+
+		if (user_input == correct_password) {
+			std::cout << "Correct password! You have gained access!\n" << std::endl;
+			break;
+		}
+		else {
+			std::cout << "That is not the correct password! Try again!\n" << std::endl;
+			continue;
+		}
+	
+	}
+	
+	/* The following line(s) are for checking if the user has 0 guesses left, if yes, will display a sorry, try again later message. */
+	if (guesses == 0) {
+		std::cout << "Sorry, you have guessed the wrong password too many times! Try again later!\n" << std::endl;
+	}
+
+	return 0;
+}
