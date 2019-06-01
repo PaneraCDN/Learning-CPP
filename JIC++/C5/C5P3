@@ -1,0 +1,25 @@
+/* Write a program that computes a running sum of inputs from the user terminating when the user gives an input value of 0. */
+
+#include <iostream>
+
+int main() {
+
+	/* The following line(s) are for creating and initalizing variables */
+	double sum = 0, user_input = 0;
+
+	/* - The following lines will create a loop that will ask the user at least once about the number they want to add to the value of "sum", this will allow me to use 0 as the inital value of the user_input variable. 
+	   - This do-while loop should continue until the user enters 0 as an input choice. */
+
+	do {
+	
+		std::cout << "What number would you like to add to your total sum?\n" << std::endl;
+		std::cin >> user_input;
+		sum = sum + user_input;
+		std::cout << std::endl; // This is added to create a space between the answer from the user and the repeat of the question.
+
+	} while (user_input != 0);
+
+	std::cout << "Your total sum is " << sum << "! \n";
+
+return 0;
+}
