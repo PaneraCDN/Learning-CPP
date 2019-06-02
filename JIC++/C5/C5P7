@@ -1,0 +1,76 @@
+/* - Write a program that provides the option of tallying up the results of a poll with 3 possible values. The first input to the program is the poll question; the next three inputs are the possible answers. 
+- The first answer is indicated by 1, the second by 2, the third by 3. The answers are tallied until a 0 is entered. 
+- The program should then show the results of the poll—try making a bar graph that shows the results properly scaled to fit on your screen no matter how many results were entered. */
+
+#include <iostream>
+#include <string>
+
+
+void final_graph(int yes_choice, int no_choice, int idc_choice) {
+	
+	std::string yes_bar, no_bar, idc_bar;
+	
+	/* This for loop is for creating the visual bar for the YES answers. The length will be based off the total number of votes. */
+	for (int i = 1; i <= yes_choice; i++) {
+		yes_bar = yes_bar + "*";
+	}
+
+	/* This for loop is for creating the visual bar for the NO answers. The length will be based off the total number of votes. */
+	for (int j = 1; j <= no_choice; j++) {
+		no_bar = no_bar + "*";
+	}
+
+	/* This for loop is for creating a visual bar for the IDC answers. The length will be based off the total number of votes. */
+	for (int k = 1; k <= idc_choice; k++) {
+		idc_bar = idc_bar = "*";
+	}
+
+	/* The following lines are for taking all of the strings created above and putting together to create a bar graph by printing them out! */
+	std::cout << "FINAL TAKE: Do you believe that global warming is caused by humans?\n" << std::endl;
+	std::cout << "Yes!: " << yes_bar << std::endl;
+	std::cout << "No! : " << no_bar << std::endl;
+	std::cout << "IDC : " << idc_bar << std::endl;
+}
+
+int main() {
+
+	/* The following line(s) are for creating and initalizing variables */
+	int yes_choice = 0, no_choice = 0, idc_choice = 0, user_input;
+
+	/* - The following lines are for creaing a do-while loop that will constantly ask the user for input to signify a vote until the user types 0 which will make the loop exit. I want the user to have at least 1 shot at giving input.
+	- These inputs will be talled into specific variables that correspond with each other. */
+
+	do {
+
+		/* The following line(s) are for printing multiple lines of output to the user and gaining an integer value back as input. */
+		std::cout << "Do you believe that global warming is caused by humans?\n";
+		std::cout << "1) Yes\n";
+		std::cout << "2) No\n";
+		std::cout << "3) I don't really care.\n";
+		std::cout << "0) I don't want to vote! (again)\n" << std::endl;
+		std::cin >> user_input;
+		std::cout << std::endl; // This is for creating space between the user's input and the next output message.
+
+		/* The following line(s) will check to see that value "user_input" is, and add a value of 1 to the respective variable the number corresponds to. */
+		
+		switch (user_input) {
+			case 0:
+				final_graph(yes_choice, no_choice, idc_choice);
+				break;
+			case 1:
+				yes_choice = yes_choice + 1;
+				continue;
+			case 2: 
+				no_choice = no_choice + 1;
+				continue;
+			case 3: 
+				idc_choice = idc_choice + 1;
+				continue;
+			default:
+				std::cout << "Sorry, that is not an option. Please try again.\n" << std::endl;
+				continue;
+		}
+
+	} while (user_input != 0);
+
+}
