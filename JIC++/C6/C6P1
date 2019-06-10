@@ -1,69 +1,183 @@
 #include <iostream>
 
-void response_1(){
-  std::cout << "Your burgers will be ready soon!\n";
+void response_1() {
+	std::cout << "Your burgers will be ready soon!\n" << std::endl;
 }
 
-void response_2(){
-  std::cout << "Your french fries will be ready soon!\n";
+void response_2() {
+	std::cout << "Your french fries will be ready soon!\n" << std::endl;
 }
 
-void response_3(){
-  std::cout << "Your rice will be ready soon!\n";
+void response_3() {
+	std::cout << "Your rice will be ready soon!\n" << std::endl;
 }
 
-void response_5(){
-  /* The following loop will:
-  - Start a number of 99 which would will be going down after each iteration, this number will be the bottles of beer. 
-  - The loop will stop when there is 1 bottle of beer left on the wall. */
+void calculator(){
 
-  for (int i = 99; i > 1; i--){
-    std::cout << i << " bottles of beer on the wall, " << i << " bottles of beer. Take one down and pass it around, " << i - 1 << " bottles of beer on the wall.\n" << std::endl;
-  }
+	/* The follwing lines are for creating and initializing variables */
+	int operation_choice;
+	double first_number, second_number;
 
-  std::cout << " 1 bottle of beer on the wall, 1 bottle of beer. Take one down and pass it around, no more bottles of beer on the wall.\n" << std::endl;
+	/* The following lines are for presenting the user with 4 input options and storing the selection into a variable. */
+	std::cout << "What arithmetic operation would you like to conduct?\n";
+	std::cout << std::endl; // This is used for creating space between input options (making it look nicer)
+	std::cout << "1) Addition\n";
+	std::cout << "2) Subtraction\n";
+	std::cout << "3) Multiplication\n";
+	std::cout << "4) Division\n" << std::endl;
+	std::cin >> operation_choice;
+	std::cout << std::endl;
 
-  std::cout << " No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, 99 bottles of beer on the wall.\n" << std::endl;
+	/* The following lines are for gaining the two numbers the user wants to use and storing them into variables */
+	std::cout << "Alright! What's the first number you would like to use?\n";
+	std::cin >> first_number;
+	std::cout << std::endl;
+	std::cout << "Got it! Now, what's the second number you would like to use?\n";
+	std::cin >> second_number;
+	std::cout << std::endl;
+
+	if (operation_choice == 1) {
+		std::cout << "The answer is " << first_number + second_number;
+	}
+	else if (operation_choice == 2) {
+		std::cout << "The answer is " << first_number - second_number;
+	}
+	else if (operation_choice == 3) {
+		std::cout << "The answer is " << first_number * second_number;
+	}
+	else if (operation_choice == 4) {
+		std::cout << "The answer is " << first_number / second_number;
+	}
+	else {
+		std::cout << "Sorry, the number you have entered is not a valid option!\n";
+	}
+
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void response_5() {
+	/* The following loop will:
+	- Start a number of 99 which would will be going down after each iteration, this number will be the bottles of beer.
+	- The loop will stop when there is 1 bottle of beer left on the wall. */
+
+	for (int i = 99; i > 1; i--) {
+		std::cout << i << " bottles of beer on the wall, " << i << " bottles of beer. Take one down and pass it around, " << i - 1 << " bottles of beer on the wall.\n" << std::endl;
+	}
+
+	std::cout << " 1 bottle of beer on the wall, 1 bottle of beer. Take one down and pass it around, no more bottles of beer on the wall.\n" << std::endl;
+
+	std::cout << " No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, 99 bottles of beer on the wall.\n" << std::endl;
 }
 
-void menu() {
+void response_6() {
+	std::cout << "Alright, have a nice day!\n" << std::endl;
+}
 
-	/* - The following lines are for creating and initializing variables */
+int menu() {
 
-	int user_input;
+	/* The following lines are for creating and initalizaing */
+		
+	int user_input = 0;
 
 	/* - The following lines are for presenting the user with output and gaining input and storing them into a variable */
 
 	/* - This will be placed into a do while loop so just the user can have at least 1 attempt to answer the output generated.
 	- There will be an exception, just in case the user doesn't want to choose a menu item. */
-
-	do {
+		
 		std::cout << "What would you like to have for lunch?\n";
 		std::cout << "1) Burgers\n";
 		std::cout << "2) French Fries\n";
 		std::cout << "3) Rice\n";
-    std::cout << "4) Calculator\n";
-    std::cout << "5) Beer Song\n";
-		std::cout << "0) No Thanks, I'm Not Hungry!\n" << std::endl;
+		std::cout << "4) Calculator\n";
+		std::cout << "5) Beer Song\n";
+		std::cout << "6) No Thanks, I don't need anything!\n" << std::endl;
 		std::cin >> user_input;
 
-		if (user_input == 0) {
-			std::cout << "Alright, have a nice day!";
-			break;
-		}
+return user_input;
 
-	} while (user_input > 5 || user_input < 1);
 }
 
 
+
+
+
+
 int main() {
-  
-  menu();
 
+	int verify = 1;
 
+	do {
 
+		/* The following lines are for creating and initalizaing */
 
-  return 0;
+		int user_input;
+
+		/* - The following lines are for presenting the user with output and gaining input and storing them into a variable */
+
+		/* - This will be placed into a do while loop so just the user can have at least 1 attempt to answer the output generated.
+		- There will be an exception, just in case the user doesn't want to choose a menu item. */
+
+		std::cout << "What would you like to have for lunch?\n";
+		std::cout << "1) Burgers\n";
+		std::cout << "2) French Fries\n";
+		std::cout << "3) Rice\n";
+		std::cout << "4) Calculator\n";
+		std::cout << "5) Beer Song\n";
+		std::cout << "6) No Thanks, I don't need anything!\n" << std::endl;
+		std::cin >> user_input;
+
+		/* The following line(s) are for making calls to functions that correspond to the menu choices. */
+		switch (user_input) {
+			case 1:
+				response_1();
+				continue;
+
+			case 2:
+				response_2();
+				continue;
+
+			case 3:
+				response_3();
+				continue;
+
+			case 4:
+				calculator();
+				continue;
+
+			case 5:
+				response_5();
+				continue;
+
+			case 6:
+				response_6();
+				verify = 0;
+				break;
+
+			default:
+				std::cout << "Invalid Response!\n" << std::endl;
+				continue;
+		}
+
+	} while (verify != 0);
+
+return 0;
 }
