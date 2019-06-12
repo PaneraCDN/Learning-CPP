@@ -1,0 +1,30 @@
+/* Modify your password program from before to put all of the password checking logic into a separate function, apart from the rest of the program. */
+/* Passwords will be 7 and 25. */
+
+#include <iostream>
+
+int check_password(int password) {
+
+	if (password != 7 && password != 25) {
+		std::cout << "Sorry! That's not the right password!\n";
+	}
+	else {
+		std::cout << "Correct password! You're in!\n";
+	}
+
+	return 0;
+}
+
+int main() {
+
+	int password;
+
+	std::cout << "Enter your password! \n";
+	std::cin >> password;
+
+	std::cout << std::endl;
+
+	check_password(password);
+
+	return 0;
+}
