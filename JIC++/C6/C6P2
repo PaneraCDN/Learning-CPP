@@ -1,0 +1,93 @@
+/* Make your calculator program perform computations in a separate function for each type of computation. */
+
+/* The following lines are for error / return codes for when the program closes. */
+// Code "0": The program has run successfully without an errors. 
+// Code "1": User hasn't chosen an approved arithmetic option.
+// Code "2": User has given invalid double inputs.
+#include <iostream>
+
+/* The following function is to perform and return the computations for addition. */
+double Addition(double x, double y) {
+	double answer;
+
+	answer = x + y;
+
+	return answer;
+}
+
+/* The following function is to perform and return the computations for subtraction. */
+double Subtraction(double x, double y) {
+	double answer;
+
+	answer = x - y;
+
+	return answer;
+}
+
+/* The following function is to perform and return the computations for multiplicaiton. */
+double Multiplication(double x, double y) {
+	double answer;
+
+	answer = x * y;
+
+	return answer;
+}
+
+/* The following function is to perform and return the computations for divison. */
+double Division(double x, double y) {
+	double answer;
+
+	answer = x / y;
+
+	return answer;
+}
+
+int main() {
+
+	/* The follwing lines are for creating and initializing variables */
+	int operation_choice;
+	double first_number, second_number;
+
+	/* The following lines are for presenting the user with 4 input options and storing the selection into a variable. */
+	std::cout << "What arithmetic operation would you like to conduct?\n";
+	std::cout << std::endl; // This is used for creating space between input options (making it look nicer)
+	std::cout << "1) Addition\n";
+	std::cout << "2) Subtraction\n";
+	std::cout << "3) Multiplication\n";
+	std::cout << "4) Division\n" << std::endl;
+	std::cin >> operation_choice;
+	std::cout << std::endl;
+
+	if (operation_choice < 1 || operation_choice > 4) {
+		std::cout << "Sorry, That is not a valid option!\n" << std::endl;
+		return 1;
+	}
+
+	/* The following lines are for gaining the two numbers the user wants to use and storing them into variables */
+	std::cout << "Alright! What's the first number you would like to use?\n";
+	std::cin >> first_number;
+	std::cout << std::endl;
+	std::cout << "Got it! Now, what's the second number you would like to use?\n";
+	std::cin >> second_number;
+	std::cout << std::endl;
+
+	switch (operation_choice) {
+		case 1:
+			std::cout << "Amazing! The answer to that would be " << Addition(first_number, second_number) << "!\n" << std::endl;
+			return 0;
+		case 2: 
+			std::cout << "Amazing! The answer to that would be " << Subtraction(first_number, second_number) << "!\n" << std::endl;
+			return 0;
+		case 3:
+			std::cout << "Amazing! The answer to that would be " << Multiplication(first_number, second_number) << "!\n" << std::endl;
+			return 0;
+		case 4:
+			std::cout << "Amazing! The answer to that would be " << Division(first_number, second_number) << "!\n" << std::endl;
+			return 0;
+		default:
+			std::cout << "Those inputs aren't valid. Sorry!\n" << std::endl;
+			return 2;
+	}
+
+	return 0;
+}
