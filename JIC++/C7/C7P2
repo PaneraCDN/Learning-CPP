@@ -1,0 +1,243 @@
+/* Write a program that outputs all the lyrics of The Twelve Days of Christmas using switch-case (hint: you might want to take advantage of fall-through cases) */
+
+/* Lyrics --> http://www.metrolyrics.com/12-days-of-christmas-lyrics-christmas-song.html */
+
+/* The plan is to have seperate functions for each day of the song and use switch cases to allow output a certain day of the song based on the value of the current_day variable. This variable is changed to a new number at the end of every "day section" that gets outputted.*/
+
+// Code "1": Means that there was something wrong when calling one of the functions
+
+#include <iostream>
+
+/* The following line(s) are for creating the lyrics for the song into functions that can be called based on the return number they send back */
+
+int day_one(){
+  
+  std::cout << "On the first day of Christmas, my true love sent to me:\n";
+  std::cout << "A Partridge in a Pear Tree\n" << std::endl;
+  
+  return 2;
+}
+
+int day_two(){
+
+  std::cout << "On the second day of Christmas, my true love sent to me:\n";
+  std::cout << "Two Turtle Doves\n";
+  std::cout << "And a Partridge in a Pear Tree\n" << std::endl;
+
+  return 3;
+}
+
+int day_three(){
+
+  std::cout << "On the third day of Christmas, my true love sent to me:\n";
+  std::cout << "Three French Hens\n";
+  std::cout << "Two Turtle Doves\n";
+  std::cout << "And a Partridge in a Pear Tree\n" << std::endl;
+
+  return 4;
+}
+
+int day_four(){
+
+  std::cout << "On the fourth day of Christmas, my true love sent to me:\n";
+  std::cout << "Four Calling Birds\n";
+  std::cout << "Three French Hens\n";
+  std::cout << "Two Turtle Doves\n";
+  std::cout << "And a Partridge in a Pear Tree\n" << std::endl;
+
+  return 5;
+}
+
+int day_five(){
+
+  std::cout << "On the fifth day of Christmas, my true love sent to me:\n";
+  std::cout << "Five Golden Rings\n";
+  std::cout << "Four Calling Birds\n";
+  std::cout << "Three French Hens\n";
+  std::cout << "Two Turtle Doves\n";
+  std::cout << "And a Partridge in a Pear Tree\n" << std::endl;
+  
+  return 6;
+}
+
+int day_six(){
+
+  std::cout << "On the sixth day of Christmas, my true love sent to me:\n";
+  std::cout << "Six Geese a Laying\n";
+  std::cout << "Five Golden Rings\n";
+  std::cout << "Four Calling Birds\n";
+  std::cout << "Three French Hens\n";
+  std::cout << "Two Turtle Doves\n";
+  std::cout << "And a Partridge in a Pear Tree\n" << std::endl;
+
+  return 7;
+}
+
+int day_seven(){
+  
+  std::cout << "On the seventh day of Christmas, my true love sent to me:\n";
+  std::cout << "Seven Swans a Swimming\n";
+  std::cout << "Six Geese a Laying\n";
+  std::cout << "Five Golden Rings\n";
+  std::cout << "Four Calling Birds\n";
+  std::cout << "Three French Hens\n";
+  std::cout << "Two Turtle Doves\n";
+  std::cout << "And a Partridge in a Pear Tree\n" << std::endl;
+
+  return 8;
+}
+
+int day_eight(){
+  
+  std::cout << "On the eigth day of Christmas, my true love sent to me:\n";
+  std::cout << "Eight Maids a Milking\n";
+  std::cout << "Seven Swans a Swimming\n";
+  std::cout << "Six Geese a Laying\n";
+  std::cout << "Five Golden Rings\n";
+  std::cout << "Four Calling Birds\n";
+  std::cout << "Three French Hens\n";
+  std::cout << "Two Turtle Doves\n";
+  std::cout << "And a Partridge in a Pear Tree\n" << std::endl;
+
+  return 9;
+}
+
+int day_nine(){
+  
+  std::cout << "On the ninth day of Christmas, my true love sent to me:\n";
+  std::cout << "Nine Ladies Dancing\n";
+  std::cout << "Eight Maids a Milking\n";
+  std::cout << "Seven Swans a Swimming\n";
+  std::cout << "Six Geese a Laying\n";
+  std::cout << "Five Golden Rings\n";
+  std::cout << "Four Calling Birds\n";
+  std::cout << "Three French Hens\n";
+  std::cout << "Two Turtle Doves\n";
+  std::cout << "And a Partridge in a Pear Tree\n" << std::endl;
+
+  return 10;
+}
+
+int day_ten(){
+
+  std::cout << "On the tenth day of Christmas, my true love sent to me:\n";
+  std::cout << "Ten Lords a Leaping\n";
+  std::cout << "Nine Ladies Dancing\n";
+  std::cout << "Eight Maids a Milking\n";
+  std::cout << "Seven Swans a Swimming\n";
+  std::cout << "Six Geese a Laying\n";
+  std::cout << "Five Golden Rings\n";
+  std::cout << "Four Calling Birds\n";
+  std::cout << "Three French Hens\n";
+  std::cout << "Two Turtle Doves\n";
+  std::cout << "And a Partridge in a Pear Tree\n" << std::endl;
+
+  return 11;
+}
+
+int day_eleven(){
+
+  std::cout << "On the eleventh day of Christmas, my true love sent to me:\n";
+  std::cout << "Eleven Pipers Piping\n";
+  std::cout << "Ten Lords a Leaping\n";
+  std::cout << "Nine Ladies Dancing\n";
+  std::cout << "Eight Maids a Milking\n";
+  std::cout << "Seven Swans a Swimming\n";
+  std::cout << "Six Geese a Laying\n";
+  std::cout << "Five Golden Rings\n";
+  std::cout << "Four Calling Birds\n";
+  std::cout << "Three French Hens\n";
+  std::cout << "Two Turtle Doves\n";
+  std::cout << "And a Partridge in a Pear Tree\n" << std::endl;
+
+  return 12;
+}
+
+int day_twelve(){
+
+  std::cout << "On the twelfth day of Christmas, my true love sent to me:\n";
+  std::cout << "12 Drummers Drumming\n";
+  std::cout << "Eleven Pipers Piping\n";
+  std::cout << "Ten Lords a Leaping\n";
+  std::cout << "Nine Ladies Dancing\n";
+  std::cout << "Eight Maids a Milking\n";
+  std::cout << "Seven Swans a Swimming\n";
+  std::cout << "Six Geese a Laying\n";
+  std::cout << "Five Golden Rings\n";
+  std::cout << "Four Calling Birds\n";
+  std::cout << "Three French Hens\n";
+  std::cout << "Two Turtle Doves\n";
+  std::cout << "And a Partridge in a Pear Tree\n" << std::endl;
+
+  return 13;
+}
+
+#include <iostream>
+
+int main(){
+
+/* The following line(s) are for creating and initializing variables. */
+int current_day = 1;
+
+/* This loop will call certain functions based on their return number that gets stored into the current_day variable. It will continue until the number isn't less than or equal to the number 12. */
+
+do{
+
+  switch (current_day){
+    
+    case 12:
+      current_day = day_twelve();
+      break;
+  
+    case 11:
+      current_day = day_eleven();
+      continue;
+  
+    case 10:
+      current_day = day_ten();
+      continue;
+  
+    case 9:
+      current_day = day_nine();
+      continue;
+  
+    case 8:
+      current_day = day_eight();
+      continue;
+  
+    case 7:
+      current_day = day_seven();
+      continue;
+
+    case 6: 
+      current_day = day_six();
+      continue;
+
+    case 5:
+      current_day = day_five();
+      continue;
+
+    case 4:
+      current_day = day_four();
+      continue;
+
+    case 3:
+      current_day = day_three();
+      continue;
+
+    case 2:
+      current_day = day_two();
+      continue;
+
+    case 1:
+      current_day = day_one();
+      continue;
+
+    default:
+      return 1;
+  }
+
+} while (current_day <= 12);
+
+  return 0;
+}
