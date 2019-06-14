@@ -1,0 +1,43 @@
+/* Write a two-player tic-tac-toe game, allowing two humans to play against each other; use enums when possible to represent the values of the board */
+
+#include <iostream>
+#include <string>
+
+int main(){
+
+int playerchoice_X, playerchoice_O;
+std::string One = "1", std::string Two = "2", std::string Three = "3";
+std::string 4 = "4", std::string 5 = "5", std::string 6 = "6";
+std::string 7= "7", std::string 8 = "8", std::string 9 = "9";
+
+
+
+
+do  {
+std::cout << "|" << std::string = "1"
+std::cout << "|4|5|6|\n";
+std::cout << "|7|8|9|\n";
+
+std::cout << "Player 1 starts, Where would you like to go?\n";
+std::cin >> playerchoice_X;
+
+switch (playerchoice_X){
+  case 1:
+
+}
+
+
+
+} while (1+4+7 = "XXX" or "OOO")
+
+
+
+
+
+
+
+
+
+
+  return 0;
+}
