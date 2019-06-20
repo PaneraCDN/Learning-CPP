@@ -3,41 +3,285 @@
 #include <iostream>
 #include <string>
 
-int main(){
+/* The following line(s) are for initalizing and creating global variables / values */
 
-int playerchoice_X, playerchoice_O;
-std::string One = "1", std::string Two = "2", std::string Three = "3";
-std::string 4 = "4", std::string 5 = "5", std::string 6 = "6";
-std::string 7= "7", std::string 8 = "8", std::string 9 = "9";
+enum TicTacToeSquare { TTTS_BLANK = 0, TTTS_O = 1, TTTS_X = 2 };
+
+std::string input_choice;
+
+std::string Top_Left = "A", Top_Middle = "B", Top_Right = "C", Middle_Left = "D", Middle = "E", Middle_Right = "F", Bottom_Left = "G", Bottom_Middle = "H", Bottom_Right = "I";
+
+int Top_Left_Value = 0, Top_Middle_Value = 0, Top_Right_Value = 0, Middle_Left_Value = 0, Middle_Value = 0, Middle_Right_Value = 0, Bottom_Left_Value = 0, Bottom_Middle_Value = 0, Bottom_Right_Value = 0;
+
+int Value_Total = 0;
 
 
+std::string board_info(){
+
+	/* The following line(s) are for presenting the user with choices through output and gaining input back. */
+
+	std::cout << "|" << Top_Left << "|" << Top_Middle << "|" << Top_Right << "|\n";
+	std::cout << "|" << Middle_Left << "|" << Middle << "|" << Middle_Right << "|\n";
+	std::cout << "|" << Bottom_Left << "|" << Bottom_Middle << "|" << Bottom_Right << "|\n" << std::endl;
+	std::cin >> input_choice;
+
+	return input_choice;
+}
+
+void GameOverX();
+void PlayerX();
+void PlayerO();
 
 
-do  {
-std::cout << "|" << std::string = "1"
-std::cout << "|4|5|6|\n";
-std::cout << "|7|8|9|\n";
+void GameOverX() {
 
-std::cout << "Player 1 starts, Where would you like to go?\n";
-std::cin >> playerchoice_X;
-
-switch (playerchoice_X){
-  case 1:
-
+	if (Top_Left_Value + Top_Middle_Value + Top_Right_Value > 5 && Top_Left_Value + Top_Middle_Value + Top_Right_Value < 7) {
+		Value_Total = 100;
+	}
+	else if (Middle_Left_Value + Middle_Value + Middle_Right_Value > 5 && Middle_Left_Value + Middle_Value + Middle_Right_Value < 7) {
+		Value_Total = 100;
+	}
+	else if (Bottom_Left_Value + Bottom_Middle_Value + Bottom_Right_Value > 5 && Bottom_Left_Value + Bottom_Middle_Value + Bottom_Right_Value < 7) {
+		Value_Total = 100;
+	}
+	else if (Top_Left_Value + Middle_Left_Value + Bottom_Left_Value > 5 && Top_Left_Value + Middle_Left_Value + Bottom_Left_Value < 7) {
+		Value_Total = 100;
+	}
+	else if (Top_Middle_Value + Middle_Value + Bottom_Middle_Value > 5 && Top_Middle_Value + Middle_Value + Bottom_Middle_Value < 7) {
+		Value_Total = 100;
+	}
+	else if (Top_Right_Value + Middle_Right_Value + Bottom_Right_Value > 5 && Top_Right_Value + Middle_Right_Value + Bottom_Right_Value < 7) {
+		Value_Total = 100;
+	}
+	else if (Top_Left_Value + Middle_Value + Bottom_Right_Value > 5 && Top_Left_Value + Middle_Value + Bottom_Right_Value < 7) {
+		Value_Total = 100;
+	}
+	else if (Top_Right_Value + Middle_Value + Bottom_Left_Value > 5 && Top_Right_Value + Middle_Value + Bottom_Left_Value < 7) {
+		Value_Total = 100;
+	}
 }
 
 
+void PlayerX(){
 
-} while (1+4+7 = "XXX" or "OOO")
+	std::cout << "Player X, Where would you like to go?\n" << std::endl;
+	board_info();
+
+		if (input_choice == "A") {
+			if (Top_Left_Value == TTTS_BLANK) {
+				Top_Left = "X";
+				Top_Left_Value = TTTS_X;
+				std::cout << std::endl << std::endl;
+				GameOverX();
+			}
+			else {
+				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+			}
+		}
+		if (input_choice == "B") {
+			if (Top_Middle_Value == TTTS_BLANK) {
+				Top_Middle = "X";
+				Top_Middle_Value = TTTS_X;
+				std::cout << std::endl << std::endl;
+				GameOverX();
+			}
+			else {
+				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+			}
+		}
+		if (input_choice == "C") {
+			if (Top_Right_Value == TTTS_BLANK) {
+				Top_Right = "X";
+				Top_Right_Value = TTTS_X;
+				std::cout << std::endl << std::endl;
+				GameOverX();
+			}
+			else {
+				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+			}
+		}
+		if (input_choice == "D") {
+			if (Middle_Left_Value == TTTS_BLANK) {
+				Middle_Left = "X";
+				Middle_Left_Value = TTTS_X;
+				std::cout << std::endl << std::endl;
+				GameOverX();
+			}
+			else {
+				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+			}
+		}
+		if (input_choice == "E") {
+			if (Middle_Value == TTTS_BLANK) {
+				Middle = "X";
+				Middle_Value = TTTS_X;
+				std::cout << std::endl << std::endl;
+				GameOverX();
+			}
+			else {
+				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+			}
+		}
+		if (input_choice == "F") {
+			if (Middle_Right_Value == TTTS_BLANK) {
+				Middle_Right = "X";
+				Middle_Right_Value = TTTS_X;
+				std::cout << std::endl << std::endl;
+				GameOverX();
+			}
+			else {
+				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+			}
+		}
+		if (input_choice == "G") {
+			if (Bottom_Left_Value == TTTS_BLANK) {
+				Bottom_Left = "X";
+				Bottom_Left_Value = TTTS_X;
+				std::cout << std::endl << std::endl;
+				GameOverX();
+			}
+			else {
+				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+			}
+		}
+		if (input_choice == "H") {
+			if (Bottom_Middle_Value == TTTS_BLANK) {
+				Bottom_Middle = "X";
+				Bottom_Middle_Value = TTTS_X;
+				std::cout << std::endl << std::endl;
+				GameOverX();
+			}
+			else {
+				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+			}
+		}
+		if (input_choice == "I") {
+			if (Bottom_Right_Value == TTTS_BLANK) {
+				Bottom_Right = "X";
+				Bottom_Right_Value = TTTS_X;
+				std::cout << std::endl << std::endl;
+				GameOverX();
+			}
+			else {
+				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+			}
+		}
+}
+
+void PlayerO(){
+
+	std::cout << "Player O, Where would you like to go?\n" << std::endl;
+	board_info();
+
+	if (input_choice == "A") {
+		if (Top_Left_Value == TTTS_BLANK) {
+			Top_Left = "O";
+			Top_Left_Value = TTTS_O;
+			std::cout << std::endl << std::endl;
+		}
+		else {
+			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+		}
+	}
+	if (input_choice == "B") {
+		if (Top_Middle_Value == TTTS_BLANK) {
+			Top_Middle = "O";
+			Top_Middle_Value = TTTS_O;
+			std::cout << std::endl << std::endl;
+		}
+		else {
+			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+		}
+	}
+	if (input_choice == "C") {
+		if (Top_Right_Value == TTTS_BLANK) {
+			Top_Right = "O";
+			Top_Right_Value = TTTS_O;
+			std::cout << std::endl << std::endl;
+		}
+		else {
+			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+		}
+	}
+	if (input_choice == "D") {
+		if (Middle_Left_Value == TTTS_BLANK) {
+			Middle_Left = "O";
+			Middle_Left_Value = TTTS_O;
+			std::cout << std::endl << std::endl;
+		}
+		else {
+			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+		}
+	}
+	if (input_choice == "E") {
+		if (Middle_Value == TTTS_BLANK) {
+			Middle = "O";
+			Middle_Value = TTTS_O;
+			std::cout << std::endl << std::endl;
+		}
+		else {
+			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+		}
+	}
+	if (input_choice == "F") {
+		if (Middle_Right_Value == TTTS_BLANK) {
+			Middle_Right = "O";
+			Middle_Right_Value = TTTS_O;
+			std::cout << std::endl << std::endl;
+		}
+		else {
+			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+		}
+	}
+	if (input_choice == "G") {
+		if (Bottom_Left_Value == TTTS_BLANK) {
+			Bottom_Left = "O";
+			Bottom_Left_Value = TTTS_O;
+			std::cout << std::endl << std::endl;
+		}
+		else {
+			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+		}
+	}
+	if (input_choice == "H") {
+		if (Bottom_Middle_Value == TTTS_BLANK) {
+			Bottom_Middle = "O";
+			Bottom_Middle_Value = TTTS_O;
+			std::cout << std::endl << std::endl;
+		}
+		else {
+			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+		}
+	}
+	if (input_choice == "I") {
+		if (Bottom_Right_Value == TTTS_BLANK) {
+			Bottom_Right = "O";
+			Bottom_Right_Value = TTTS_O;
+			std::cout << std::endl << std::endl;
+		}
+		else {
+			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
+		}
+	}
+}
 
 
+int main() {
+
+	while (Value_Total != 100 && Value_Total != 50) {
+
+		PlayerX();
+		PlayerO();
+
+	}
+	
+	if (Value_Total = 100) {
+		std::cout << "The game is over! Player X has won!\n" << std::endl;
+	}
+	else {
+		std::cout << "The game is over! Player O has won!\n" << std::endl;
+	}
 
 
-
-
-
-
-
-
-  return 0;
+	return 0;
 }
