@@ -1,287 +1,378 @@
 /* Write a two-player tic-tac-toe game, allowing two humans to play against each other; use enums when possible to represent the values of the board */
 
 #include <iostream>
-#include <string>
 
-/* The following line(s) are for initalizing and creating global variables / values */
+/* Creating an Enum for board numbers  */
+enum board_numbers{
+    TTTS_BLANK = 0, TTTS_O = 1, TTTS_X = 2
+};
 
-enum TicTacToeSquare { TTTS_BLANK = 0, TTTS_O = 1, TTTS_X = 2 };
+/* Creating Global Variables */
+std::string TopLeft = "1", TopMiddle = "2", TopRight = "3", MiddleLeft = "4", Middle = "5", MiddleRight = "6", BottomLeft = "7", BottomMiddle = "8", BottomRight = "9";
+int TopLeft_Value = 0, TopMiddle_Value = 0, TopRight_Value = 0, MiddleLeft_Value = 0, Middle_Value = 0, MiddleRight_Value = 0, BottomLeft_Value = 0, BottomMiddle_Value = 0, BottomRight_Value = 0;
+int user_input, board_spots = 0;
+std::string DC1, DC2, DC3;
 
-std::string input_choice;
-
-std::string Top_Left = "A", Top_Middle = "B", Top_Right = "C", Middle_Left = "D", Middle = "E", Middle_Right = "F", Bottom_Left = "G", Bottom_Middle = "H", Bottom_Right = "I";
-
-int Top_Left_Value = 0, Top_Middle_Value = 0, Top_Right_Value = 0, Middle_Left_Value = 0, Middle_Value = 0, Middle_Right_Value = 0, Bottom_Left_Value = 0, Bottom_Middle_Value = 0, Bottom_Right_Value = 0;
-
-int Value_Total = 0;
-
-
-std::string board_info(){
-
-	/* The following line(s) are for presenting the user with choices through output and gaining input back. */
-
-	std::cout << "|" << Top_Left << "|" << Top_Middle << "|" << Top_Right << "|\n";
-	std::cout << "|" << Middle_Left << "|" << Middle << "|" << Middle_Right << "|\n";
-	std::cout << "|" << Bottom_Left << "|" << Bottom_Middle << "|" << Bottom_Right << "|\n" << std::endl;
-	std::cin >> input_choice;
-
-	return input_choice;
+void gameboard(){
+    /* TicTacToe Display Gameboard */
+    std::cout << std::endl;
+    std::cout << "|" << TopLeft << "|" << TopMiddle << "|" << TopRight << "|\n";
+    std::cout << "|" << MiddleLeft << "|" << Middle << "|" << MiddleRight << "|\n";
+    std::cout << "|" << BottomLeft << "|" << BottomMiddle << "|" << BottomRight << "|\n" << std::endl;
 }
 
-void GameOverX();
-void PlayerX();
-void PlayerO();
+void player_x(){
 
+    /* Creating Function Variable */
+    int turn_check = 1;
 
-void GameOverX() {
+    do {
 
-	if (Top_Left_Value + Top_Middle_Value + Top_Right_Value > 5 && Top_Left_Value + Top_Middle_Value + Top_Right_Value < 7) {
-		Value_Total = 100;
-	}
-	else if (Middle_Left_Value + Middle_Value + Middle_Right_Value > 5 && Middle_Left_Value + Middle_Value + Middle_Right_Value < 7) {
-		Value_Total = 100;
-	}
-	else if (Bottom_Left_Value + Bottom_Middle_Value + Bottom_Right_Value > 5 && Bottom_Left_Value + Bottom_Middle_Value + Bottom_Right_Value < 7) {
-		Value_Total = 100;
-	}
-	else if (Top_Left_Value + Middle_Left_Value + Bottom_Left_Value > 5 && Top_Left_Value + Middle_Left_Value + Bottom_Left_Value < 7) {
-		Value_Total = 100;
-	}
-	else if (Top_Middle_Value + Middle_Value + Bottom_Middle_Value > 5 && Top_Middle_Value + Middle_Value + Bottom_Middle_Value < 7) {
-		Value_Total = 100;
-	}
-	else if (Top_Right_Value + Middle_Right_Value + Bottom_Right_Value > 5 && Top_Right_Value + Middle_Right_Value + Bottom_Right_Value < 7) {
-		Value_Total = 100;
-	}
-	else if (Top_Left_Value + Middle_Value + Bottom_Right_Value > 5 && Top_Left_Value + Middle_Value + Bottom_Right_Value < 7) {
-		Value_Total = 100;
-	}
-	else if (Top_Right_Value + Middle_Value + Bottom_Left_Value > 5 && Top_Right_Value + Middle_Value + Bottom_Left_Value < 7) {
-		Value_Total = 100;
-	}
+    std::cout << "Player (X), Where Would You Like To Go? (Enter 10 To Stop The Game)\n";
+        std::cin >> user_input;
+
+        switch (user_input){
+
+            case 1:
+                if (TopLeft_Value == TTTS_BLANK){
+                TopLeft = "X";
+                TopLeft_Value = 2;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 2:
+                if (TopMiddle_Value == TTTS_BLANK){
+                TopMiddle = "X";
+                TopMiddle_Value = 2;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 3:
+                if (TopRight_Value == TTTS_BLANK){
+                TopRight = "X";
+                TopRight_Value = 2;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 4:
+                if (MiddleLeft_Value == TTTS_BLANK){
+                MiddleLeft = "X";
+                MiddleLeft_Value = 2;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 5:
+                if (Middle_Value == TTTS_BLANK){
+                Middle = "X";
+                Middle_Value = 2;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 6:
+                if (MiddleRight_Value == TTTS_BLANK){
+                MiddleRight = "X";
+                MiddleRight_Value = 2;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 7:
+                if (BottomLeft_Value == TTTS_BLANK){
+                BottomLeft = "X";
+                BottomLeft_Value = 2;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 8:
+                if (BottomMiddle_Value == TTTS_BLANK){
+                BottomMiddle = "X";
+                BottomMiddle_Value = 2;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 9:
+                if (BottomRight_Value == TTTS_BLANK){
+                BottomRight = "X";
+                BottomRight_Value = 2;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 10:
+                DC1 = "D", DC2 = "D", DC3 = "D";
+                turn_check = 0;
+                break;
+
+        }
+
+    } while (turn_check != 0);
+
 }
 
+void player_o(){
 
-void PlayerX(){
+    /* Creating Function Variable */
+    int turn_check = 1;
 
-	std::cout << "Player X, Where would you like to go?\n" << std::endl;
-	board_info();
+    if (DC1 + DC2 + DC3 == "DDD"){
+        turn_check = 0;
+    }
 
-		if (input_choice == "A") {
-			if (Top_Left_Value == TTTS_BLANK) {
-				Top_Left = "X";
-				Top_Left_Value = TTTS_X;
-				std::cout << std::endl << std::endl;
-				GameOverX();
-			}
-			else {
-				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-			}
-		}
-		if (input_choice == "B") {
-			if (Top_Middle_Value == TTTS_BLANK) {
-				Top_Middle = "X";
-				Top_Middle_Value = TTTS_X;
-				std::cout << std::endl << std::endl;
-				GameOverX();
-			}
-			else {
-				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-			}
-		}
-		if (input_choice == "C") {
-			if (Top_Right_Value == TTTS_BLANK) {
-				Top_Right = "X";
-				Top_Right_Value = TTTS_X;
-				std::cout << std::endl << std::endl;
-				GameOverX();
-			}
-			else {
-				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-			}
-		}
-		if (input_choice == "D") {
-			if (Middle_Left_Value == TTTS_BLANK) {
-				Middle_Left = "X";
-				Middle_Left_Value = TTTS_X;
-				std::cout << std::endl << std::endl;
-				GameOverX();
-			}
-			else {
-				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-			}
-		}
-		if (input_choice == "E") {
-			if (Middle_Value == TTTS_BLANK) {
-				Middle = "X";
-				Middle_Value = TTTS_X;
-				std::cout << std::endl << std::endl;
-				GameOverX();
-			}
-			else {
-				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-			}
-		}
-		if (input_choice == "F") {
-			if (Middle_Right_Value == TTTS_BLANK) {
-				Middle_Right = "X";
-				Middle_Right_Value = TTTS_X;
-				std::cout << std::endl << std::endl;
-				GameOverX();
-			}
-			else {
-				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-			}
-		}
-		if (input_choice == "G") {
-			if (Bottom_Left_Value == TTTS_BLANK) {
-				Bottom_Left = "X";
-				Bottom_Left_Value = TTTS_X;
-				std::cout << std::endl << std::endl;
-				GameOverX();
-			}
-			else {
-				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-			}
-		}
-		if (input_choice == "H") {
-			if (Bottom_Middle_Value == TTTS_BLANK) {
-				Bottom_Middle = "X";
-				Bottom_Middle_Value = TTTS_X;
-				std::cout << std::endl << std::endl;
-				GameOverX();
-			}
-			else {
-				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-			}
-		}
-		if (input_choice == "I") {
-			if (Bottom_Right_Value == TTTS_BLANK) {
-				Bottom_Right = "X";
-				Bottom_Right_Value = TTTS_X;
-				std::cout << std::endl << std::endl;
-				GameOverX();
-			}
-			else {
-				std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-			}
-		}
+    while (turn_check != 0) {
+
+    gameboard();
+
+    std::cout << std::endl << "Player (O), Where Would You Like To Go? (Enter 10 To Stop The Game)\n";
+        std::cin >> user_input;
+
+        switch (user_input){
+
+            case 1:
+                if (TopLeft_Value == TTTS_BLANK){
+                TopLeft = "O";
+                TopLeft_Value = 1;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 2:
+                if (TopMiddle_Value == TTTS_BLANK){
+                TopMiddle = "O";
+                TopMiddle_Value = 1;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 3:
+                if (TopRight_Value == TTTS_BLANK){
+                TopRight = "O";
+                TopRight_Value = 1;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 4:
+                if (MiddleLeft_Value == TTTS_BLANK){
+                MiddleLeft = "O";
+                MiddleLeft_Value = 1;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 5:
+                if (Middle_Value == TTTS_BLANK){
+                Middle = "O";
+                Middle_Value = 1;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 6:
+                if (MiddleRight_Value == TTTS_BLANK){
+                MiddleRight = "O";
+                MiddleRight_Value = 1;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 7:
+                if (BottomLeft_Value == TTTS_BLANK){
+                BottomLeft = "O";
+                BottomLeft_Value = 1;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 8:
+                if (BottomMiddle_Value == TTTS_BLANK){
+                BottomMiddle = "O";
+                BottomMiddle_Value = 1;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 9:
+                if (BottomRight_Value == TTTS_BLANK){
+                BottomRight = "O";
+                BottomRight_Value = 1;
+                board_spots = board_spots + 1;
+                turn_check = 0;
+                break;
+                }
+                else{
+                    std::cout << std::endl << std::endl << "Sorry! This Spot Is Taken!\n" << std::endl;
+                    continue;
+                }
+            case 10:
+                DC1 = "D", DC2 = "D", DC3 = "D";
+                turn_check = 0;
+                break;
+
+        }
+
+    }
+
 }
 
-void PlayerO(){
+void gamestatus(){
 
-	std::cout << "Player O, Where would you like to go?\n" << std::endl;
-	board_info();
+/* Player X Winning Check*/
+    if (TopLeft + TopMiddle + TopRight == "XXX"){
+        std::cout << "Player (X) Was The First One To Win!\n";
+    }
+    else if(MiddleLeft + Middle + MiddleRight == "XXX"){
+        std::cout << "Player (X) Was The First One To Win!\n";
+    }
+    else if(BottomLeft + BottomMiddle + BottomRight == "XXX"){
+        std::cout << "Player (X) Was The First One To Win!\n";
+    }
+    else if(TopLeft + MiddleLeft + BottomLeft == "XXX"){
+        std::cout << "Player (X) Was The First One To Win!\n";
+    }
+    else if(TopMiddle + Middle + BottomMiddle == "XXX"){
+        std::cout << "Player (X) Was The First One To Win!\n";
+    }
+    else if(TopRight + MiddleRight + BottomRight == "XXX"){
+        std::cout << "Player (X) Was The First One To Win!\n";
+    }
+    else if(TopLeft + Middle + BottomRight == "XXX"){
+        std::cout << "Player (X) Was The First One To Win!\n";
+    }
+    else if(TopRight + Middle + BottomLeft == "XXX"){
+        std::cout << "Player (X) Was The First One To Win!\n";
+    }
 
-	if (input_choice == "A") {
-		if (Top_Left_Value == TTTS_BLANK) {
-			Top_Left = "O";
-			Top_Left_Value = TTTS_O;
-			std::cout << std::endl << std::endl;
-		}
-		else {
-			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-		}
-	}
-	if (input_choice == "B") {
-		if (Top_Middle_Value == TTTS_BLANK) {
-			Top_Middle = "O";
-			Top_Middle_Value = TTTS_O;
-			std::cout << std::endl << std::endl;
-		}
-		else {
-			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-		}
-	}
-	if (input_choice == "C") {
-		if (Top_Right_Value == TTTS_BLANK) {
-			Top_Right = "O";
-			Top_Right_Value = TTTS_O;
-			std::cout << std::endl << std::endl;
-		}
-		else {
-			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-		}
-	}
-	if (input_choice == "D") {
-		if (Middle_Left_Value == TTTS_BLANK) {
-			Middle_Left = "O";
-			Middle_Left_Value = TTTS_O;
-			std::cout << std::endl << std::endl;
-		}
-		else {
-			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-		}
-	}
-	if (input_choice == "E") {
-		if (Middle_Value == TTTS_BLANK) {
-			Middle = "O";
-			Middle_Value = TTTS_O;
-			std::cout << std::endl << std::endl;
-		}
-		else {
-			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-		}
-	}
-	if (input_choice == "F") {
-		if (Middle_Right_Value == TTTS_BLANK) {
-			Middle_Right = "O";
-			Middle_Right_Value = TTTS_O;
-			std::cout << std::endl << std::endl;
-		}
-		else {
-			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-		}
-	}
-	if (input_choice == "G") {
-		if (Bottom_Left_Value == TTTS_BLANK) {
-			Bottom_Left = "O";
-			Bottom_Left_Value = TTTS_O;
-			std::cout << std::endl << std::endl;
-		}
-		else {
-			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-		}
-	}
-	if (input_choice == "H") {
-		if (Bottom_Middle_Value == TTTS_BLANK) {
-			Bottom_Middle = "O";
-			Bottom_Middle_Value = TTTS_O;
-			std::cout << std::endl << std::endl;
-		}
-		else {
-			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-		}
-	}
-	if (input_choice == "I") {
-		if (Bottom_Right_Value == TTTS_BLANK) {
-			Bottom_Right = "O";
-			Bottom_Right_Value = TTTS_O;
-			std::cout << std::endl << std::endl;
-		}
-		else {
-			std::cout << "Sorry, somebody has already gone to that spot!\n" << std::endl;
-		}
-	}
+/* Player O Winning Check*/
+
+    if (TopLeft + TopMiddle + TopRight == "OOO"){
+        std::cout << "Player (O) Was The First One To Win!\n";
+    }
+    else if(MiddleLeft + Middle + MiddleRight == "OOO"){
+        std::cout << "Player (O) Was The First One To Win!\n";
+    }
+    else if(BottomLeft + BottomMiddle + BottomRight == "OOO"){
+        std::cout << "Player (O) Was The First One To Win!\n";
+    }
+    else if(TopLeft + MiddleLeft + BottomLeft == "OOO"){
+        std::cout << "Player (O) Was The First One To Win!\n";
+    }
+    else if(TopMiddle + Middle + BottomMiddle == "OOO"){
+        std::cout << "Player (O) Was The First One To Win!\n";
+    }
+    else if(TopRight + MiddleRight + BottomRight == "OOO"){
+        std::cout << "Player (O) Was The First One To Win!\n";
+    }
+    else if(TopLeft + Middle + BottomRight == "OOO"){
+        std::cout << "Player (O) Was The First One To Win!\n";
+    }
+    else if(TopRight + Middle + BottomLeft == "OOO"){
+        std::cout << "Player (O) Was The First One To Win!\n";
+    }
+
+    /* Draw Check */
+
+    if (user_input == 10){
+
+        if (board_spots == 9 && TopLeft + TopMiddle + TopRight != "XXX" && MiddleLeft + Middle + MiddleRight != "XXX" && BottomLeft + BottomMiddle + BottomRight != "XXX" && TopLeft + MiddleLeft + BottomLeft != "XXX" && TopMiddle + Middle + BottomMiddle != "XXX" && TopRight + MiddleRight + BottomRight != "XXX" && TopLeft + Middle + BottomRight != "XXX" && TopRight + Middle + BottomLeft != "XXX" && TopLeft + TopMiddle + TopRight != "OOO" && MiddleLeft + Middle + MiddleRight != "OOO" && BottomLeft + BottomMiddle + BottomRight != "OOO" && TopLeft + MiddleLeft + BottomLeft != "OOO" && TopMiddle + Middle + BottomMiddle != "OOO" && TopRight + MiddleRight + BottomRight != "OOO" && TopLeft + Middle + BottomRight != "OOO" && TopRight + Middle + BottomLeft != "OOO"){
+            std::cout << "This Game Has Ended In A Draw!\n" << std::endl;
+        }
+
+    }
+
 }
 
+int main(){
 
-int main() {
+    std::cout << "Welcome To TicTacToe (Basic Edition)!\n";
 
-	while (Value_Total != 100 && Value_Total != 50) {
+    while (user_input != 10 && board_spots != 9 && TopLeft + TopMiddle + TopRight != "XXX" && MiddleLeft + Middle + MiddleRight != "XXX" && BottomLeft + BottomMiddle + BottomRight != "XXX" && TopLeft + MiddleLeft + BottomLeft != "XXX" && TopMiddle + Middle + BottomMiddle != "XXX" && TopRight + MiddleRight + BottomRight != "XXX" && TopLeft + Middle + BottomRight != "XXX" && TopRight + Middle + BottomLeft != "XXX" && TopLeft + TopMiddle + TopRight != "OOO" && MiddleLeft + Middle + MiddleRight != "OOO" && BottomLeft + BottomMiddle + BottomRight != "OOO" && TopLeft + MiddleLeft + BottomLeft != "OOO" && TopMiddle + Middle + BottomMiddle != "OOO" && TopRight + MiddleRight + BottomRight != "OOO" && TopLeft + Middle + BottomRight != "OOO" && TopRight + Middle + BottomLeft != "OOO"){
 
-		PlayerX();
-		PlayerO();
+        gameboard();
 
-	}
-	
-	if (Value_Total = 100) {
-		std::cout << "The game is over! Player X has won!\n" << std::endl;
-	}
-	else {
-		std::cout << "The game is over! Player O has won!\n" << std::endl;
-	}
+        player_x();
 
+        player_o();
 
-	return 0;
+    }
+
+    gameboard();
+
+    gamestatus();
+
+    return 0;
 }
