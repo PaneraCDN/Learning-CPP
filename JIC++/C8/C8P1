@@ -1,1 +1,112 @@
+// Heads or Tails Game
 
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+
+int randRange(int low, int high) {
+
+	return rand() % (high - low + 1) + low;
+}
+
+
+int main() {
+
+	// Generating a random seed based on the current time
+	srand(time(NULL));
+
+	// Creating variable(s) for user input
+	int user_input = 0, win_check = 0, rematch_confirmation = 0;
+
+	// Loop that randomly chooses between 1 or 2 (Heads or Tails)
+	for (int i = 1; i < 2; i++) {
+		
+		// Allowing the user to predict heads or tails
+
+		std::cout << "Would you like to choose (1) Heads or (2) Tails?\n";
+		std::cin >> user_input;
+		std::cout << std::endl;
+
+		switch (user_input) {
+
+		case 1:
+			
+			win_check = randRange(1, 2);
+
+			if (user_input == win_check) {
+				std::cout << "It Was Heads! You Win!\n" << std::endl;
+				std::cout << "Would you like to play again?\n";
+				std::cin >> rematch_confirmation;
+				std::cout << std::endl;
+
+				switch (rematch_confirmation) {
+
+				case 1:
+					main();
+
+				case 2:
+					break;
+				}
+
+			}
+
+			else {
+				std::cout << "Better Luck Next Time! It Was Tails!\n" << std::endl;
+				std::cout << "Would you like to play again?\n";
+				std::cin >> rematch_confirmation;
+				std::cout << std::endl;
+
+				switch (rematch_confirmation) {
+
+				case 1:
+					main();
+
+				case 2:
+					break;
+				}
+
+			}
+
+		case 2:
+
+			win_check = randRange(1, 2);
+
+			if (user_input == win_check) {
+				std::cout << "It Was Tails! You Win!\n" << std::endl;
+				std::cout << "Would you like to play again?\n";
+				std::cin >> rematch_confirmation;
+				std::cout << std::endl;
+
+				switch (rematch_confirmation) {
+
+				case 1:
+					main();
+
+				case 2:
+					break;
+				}
+
+			}
+
+			else {
+				std::cout << "Better Luck Next Time! It Was Heads!\n" << std::endl;
+				std::cout << "Would you like to play again?\n";
+				std::cin >> rematch_confirmation;
+				std::cout << std::endl;
+
+				switch (rematch_confirmation) {
+
+				case 1:
+					main();
+
+				case 2:
+					break;
+				}
+
+			}
+
+		}
+	}
+
+	return 0;
+}
