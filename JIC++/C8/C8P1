@@ -45,7 +45,7 @@ int main() {
 					main();
 
 				case 2:
-					break;
+					return 1;
 				}
 
 			}
@@ -62,7 +62,7 @@ int main() {
 					main();
 
 				case 2:
-					break;
+					return 1;
 				}
 
 			}
@@ -73,7 +73,7 @@ int main() {
 
 			if (user_input == win_check) {
 				std::cout << "It Was Tails! You Win!\n" << std::endl;
-				std::cout << "Would you like to play again?\n";
+				std::cout << "Would you like to play again? (1) Yes or (2) No\n";
 				std::cin >> rematch_confirmation;
 				std::cout << std::endl;
 
@@ -83,14 +83,14 @@ int main() {
 					main();
 
 				case 2:
-					break;
+					return 1;
 				}
 
 			}
 
 			else {
 				std::cout << "Better Luck Next Time! It Was Heads!\n" << std::endl;
-				std::cout << "Would you like to play again?\n";
+				std::cout << "Would you like to play again? (1) Yes or (2) No\n";
 				std::cin >> rematch_confirmation;
 				std::cout << std::endl;
 
@@ -100,7 +100,7 @@ int main() {
 					main();
 
 				case 2:
-					break;
+					return 1;
 				}
 
 			}
