@@ -1,0 +1,49 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+/* Write a program that picks a number between 1 and 100, and then lets the user guess what the
+number is. The program should tell the user if their guess is too high, too low, or just right. */
+
+// Creating variables
+int user_input, generatedNumber, guesses = 0;
+
+
+// Function for creating a random number between 1 - 100
+int randRange(int low, int high) {
+	return generatedNumber = rand() % (high - low) + 1;
+}
+
+
+int main(){
+
+	// Creating a random seed based on the current time
+	srand(time(NULL));
+
+	// Getting a number that is between 1 - 100 through a function previously made above
+	randRange(1, 100);
+
+	do {
+
+		std::cout << "Enter Your Guess!\n";
+		std::cin >> user_input;
+		std::cout << std::endl;
+
+		if (user_input < generatedNumber) {
+			std::cout << "The number is HIGHER than your guess! Try again!\n" << std::endl;
+			guesses = guesses + 1;
+		}
+
+		else if (user_input > generatedNumber) {
+			std::cout << "The number is LOWER than your guess! Try again!\n" << std::endl;
+			guesses = guesses + 1;
+		}
+
+		else {
+			std::cout << "You guessed the correct number! It took you " << guesses << " guesses!\n" << std::endl;
+		}
+
+	} while (user_input != generatedNumber);	
+
+	return 0;
+}
