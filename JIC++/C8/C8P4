@@ -1,0 +1,84 @@
+/* Make a "slot machine" game that randomly displays the results of a slot machine to a player—have three (or more) possible values for each wheel of the slot machine. 
+Don't worry about displaying the text "spinning" by. Just choose the results and display them and print out the winnings (choose your own winning combinations). */
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+// Creating variables to hold the values of each slot machine wheel
+int wheel_1, wheel_2, wheel_3, user_confirmation = 2;
+
+// Function for generating a random number based on a given range
+int randRange(int low, int high) {
+	
+	return rand() % (low - high) + 1;
+}
+
+// Function for checking if the player has won any prizes
+void prizeChecker() {
+
+	if (wheel_1 == 1 && wheel_2 == 1 && wheel_3 == 1) {
+		std::cout << "Congratulations! You won $10!\n" << std::endl;
+	}
+	else if (wheel_1 == 2 && wheel_2 == 2 && wheel_3 == 2) {
+		std::cout << "Congratulations! You won $25\n" << std::endl;
+	}
+	else if (wheel_1 == 3 && wheel_2 == 3 && wheel_3 == 3) {
+		std::cout << "Congratulations! You won $50\n" << std::endl;
+	}
+	else if (wheel_1 == 4 && wheel_2 == 4 && wheel_3 == 4) {
+		std::cout << "Congratulations! You won $100\n" << std::endl;
+	}
+	else if (wheel_1 == 5 && wheel_2 == 5 && wheel_3 == 5) {
+		std::cout << "Congratulations! You won $500\n" << std::endl;
+	}
+	else if (wheel_1 == 6 && wheel_2 == 6 && wheel_3 == 6) {
+		std::cout << "Congratulations! You won $1,000\n" << std::endl;
+	}
+	else if (wheel_1 == 7 && wheel_2 == 7 && wheel_3 == 7) {
+		std::cout << "Congratulations! You hit the JACKPOT! You won $100,000!\n" << std::endl;
+	}
+	else if (wheel_1 == 8 && wheel_2 == 8 && wheel_3 == 8) {
+		std::cout << "Congratulations! You won $2,500\n" << std::endl;
+	}
+	else if (wheel_1 == 9 && wheel_2 == 9 && wheel_3 == 9) {
+		std::cout << "Congratulations! You won $3,500\n" << std::endl;
+	}
+	else if (wheel_1 == 10 && wheel_2 == 10 && wheel_3 == 10) {
+		std::cout << "Congratulations! You won $5,000\n" << std::endl;
+	}
+
+}
+
+int main() {
+
+ // Generating a random seed based on the current time
+	srand(time(NULL));
+
+	do {
+		
+		std::cout << "Would You Like To Spin The Wheel? (1) Yes or (2) No.\n";
+		std::cin >> user_confirmation;
+		std::cout << std::endl;
+
+		// If-Else statement to see if the user wants to play or not
+		if (user_confirmation == 2) {
+			user_confirmation = 2;
+			break;
+		}
+
+		else {
+			wheel_1 = randRange(1, 10);
+			wheel_2 = randRange(1, 10);
+			wheel_3 = randRange(1, 10);
+		}
+
+		std::cout << "| " << wheel_1 << " | " << wheel_2 << " | " << wheel_3 << " |\n" << std::endl;
+
+		prizeChecker();
+
+
+	} while (user_confirmation == 1);
+
+	return 0;
+}
